@@ -22,23 +22,23 @@ public class Index {
         
         JButton btn = new JButton("ROOMS");
         btn.setOpaque(true);
-        btn.setBackground(new Color(78, 78, 173));
+        btn.setBackground(new Color(78, 78, 173).darker());
         btn.setForeground(Color.WHITE);
         Border border = BorderFactory.createLineBorder(new Color(88, 125, 184,10).darker());
         btn.setBorder(border);
-        JButton btn1 = new JButton("Customer");
+        JButton btn1 = new JButton("CUSTOMER");
         btn1.setOpaque(true);
-        btn1.setBackground(new Color(78, 78, 173));
+        btn1.setBackground(new Color(78, 78, 173).darker());
         btn1.setForeground(Color.WHITE);
         btn1.setBorder(border);
         JButton btn2 = new JButton("RESERVATIONS");
         btn2.setOpaque(true);
-        btn2.setBackground(new Color(78, 78, 173));
+        btn2.setBackground(new Color(78, 78, 173).darker());
         btn2.setForeground(Color.WHITE);
         btn2.setBorder(border);
         JButton btn3 = new JButton("BILLS");
         btn3.setOpaque(true);
-        btn3.setBackground(new Color(78, 78, 173));
+        btn3.setBackground(new Color(78, 78, 173).darker());
         btn3.setForeground(Color.WHITE);
         btn3.setBorder(border);
 
@@ -46,16 +46,16 @@ public class Index {
         panel.setLayout(null);
         l1.setBounds(10, 20, 200, 50);
         
-        btn.setBounds(10, 200, 100, 30);
+        btn.setBounds(10, 200, 150, 30);
         btn.setFont(new Font("TimesRoman", Font.PLAIN, 16));
         btn.setOpaque(true);
-        btn1.setBounds(10, 250, 100, 30);
+        btn1.setBounds(10, 250, 150, 30);
         btn1.setFont(new Font("TimesRoman", Font.PLAIN, 16));
         btn1.setOpaque(true);
         btn2.setBounds(10, 300, 150, 30);
         btn2.setFont(new Font("TimesRoman", Font.PLAIN, 16));
         btn2.setOpaque(true);
-        btn3.setBounds(10, 350, 75, 30);
+        btn3.setBounds(10, 350, 150, 30);
         btn3.setFont(new Font("TimesRoman", Font.PLAIN, 16));
         btn3.setOpaque(true);
 
