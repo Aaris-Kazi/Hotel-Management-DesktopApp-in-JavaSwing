@@ -1,5 +1,7 @@
+
 import javax.swing.*;
 import java.awt.*;
+
 
 class SplashScreen extends JWindow{
     
@@ -27,5 +29,8 @@ class SplashScreen extends JWindow{
     }
     public static void main(String[] args) {
         SplashScreen m = new SplashScreen();
+        Index I = new Index();
+        I.Front();
+        
     }
 }
