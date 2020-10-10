@@ -139,7 +139,6 @@ public class Index {
         panel4.setBounds(220, 0, 1280, 220);
         panel4.setLayout(null);
         
-        
         l1.setBounds(10, 20, 200, 50);
         l2.setBounds(20, 20, 200, 50);
         l3.setBounds(20, 20, 200, 50);
@@ -237,7 +236,6 @@ public class Index {
                 jf.add(panel1);
                 jf.revalidate();
                 jf.repaint();
-
             } 
         });
 
@@ -250,7 +248,6 @@ public class Index {
                 jf.add(panel2);
                 jf.revalidate();
                 jf.repaint();
-
             } 
         });
 
@@ -279,12 +276,21 @@ public class Index {
 
             } 
         });
+
+        showroom.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                jf.add(new Queries().showroom());
+                jf.revalidate();
+                jf.repaint();
+
+            } 
+        });
         
         jf.setIconImage(icon);
         jf.setSize(1080, 720);
         jf.setDefaultCloseOperation(2);
         jf.setLayout(null);
         jf.setVisible(true);
-
     }    
 }
