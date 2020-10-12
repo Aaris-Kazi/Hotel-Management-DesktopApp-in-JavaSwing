@@ -8,11 +8,18 @@ import java.awt.event.*;
 
 public class Index {
     public void Front() {
+        Queries qr = new Queries();
+        JPanel jpanel = qr.showroom();
+        JPanel jpanel1 = qr.avairoom();
+        JPanel jpanel2 = qr.resroom();
+
+
+
         JFrame jf = new JFrame("Hotel Management");
         java.awt.Image icon = Toolkit.getDefaultToolkit().getImage("hotel.png");
         jf.getContentPane().setBackground(new Color(0, 0, 0, 220));
-        Border border = BorderFactory.createLineBorder(new Color(88, 125, 184,10).darker());
-        
+        Border border = BorderFactory.createLineBorder(new Color(88, 125, 184, 10).darker());
+
         JPanel panel = new JPanel();
         panel.setBackground(new Color(88, 125, 184).darker());
         JPanel panel1 = new JPanel();
@@ -42,7 +49,7 @@ public class Index {
         JLabel l5 = new JLabel("BILLS");
         l5.setForeground(Color.WHITE);
         l5.setFont(new Font("TimesRoman", Font.PLAIN, 22));
-        
+
         JButton btn = new JButton("ROOMS");
         btn.setOpaque(true);
         btn.setBackground(new Color(78, 78, 173).darker());
@@ -138,13 +145,13 @@ public class Index {
         panel3.setLayout(null);
         panel4.setBounds(220, 0, 1280, 220);
         panel4.setLayout(null);
-        
+
         l1.setBounds(10, 20, 200, 50);
         l2.setBounds(20, 20, 200, 50);
         l3.setBounds(20, 20, 200, 50);
         l4.setBounds(20, 20, 200, 50);
         l5.setBounds(20, 20, 200, 50);
-        
+
         btn.setBounds(10, 200, 150, 30);
         btn.setFont(new Font("TimesRoman", Font.PLAIN, 16));
         btn.setOpaque(true);
@@ -198,7 +205,6 @@ public class Index {
         add2.setFont(new Font("TimesRoman", Font.PLAIN, 16));
         add2.setOpaque(true);
 
-
         jf.add(panel);
         jf.add(panel1);
         panel.add(l1);
@@ -227,7 +233,7 @@ public class Index {
         panel4.add(recent2);
         panel4.add(add2);
 
-        btn.addActionListener(new ActionListener(){
+        btn.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 jf.remove(panel2);
@@ -236,10 +242,11 @@ public class Index {
                 jf.add(panel1);
                 jf.revalidate();
                 jf.repaint();
-            } 
+
+            }
         });
 
-        btn1.addActionListener(new ActionListener(){
+        btn1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 jf.remove(panel1);
@@ -248,10 +255,11 @@ public class Index {
                 jf.add(panel2);
                 jf.revalidate();
                 jf.repaint();
-            } 
+
+            }
         });
 
-        btn2.addActionListener(new ActionListener(){
+        btn2.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 jf.remove(panel1);
@@ -261,10 +269,10 @@ public class Index {
                 jf.revalidate();
                 jf.repaint();
 
-            } 
+            }
         });
 
-        btn3.addActionListener(new ActionListener(){
+        btn3.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
                 jf.remove(panel1);
@@ -274,19 +282,42 @@ public class Index {
                 jf.revalidate();
                 jf.repaint();
 
-            } 
+            }
         });
 
-        showroom.addActionListener(new ActionListener(){
+        showroom.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
-                jf.add(new Queries().showroom());
+                
+                jf.remove(jpanel1);
+                jf.add(jpanel);
                 jf.revalidate();
                 jf.repaint();
-
             } 
         });
-        
+
+        avrooms.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                jf.remove(jpanel);
+                jf.remove(jpanel2);
+                jf.add(jpanel1);
+                jf.revalidate();
+                jf.repaint();
+            } 
+        });
+
+        reserved.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                jf.remove(jpanel);
+                jf.remove(jpanel1);
+                jf.add(jpanel2);
+                jf.revalidate();
+                jf.repaint();
+            } 
+        });
+
         jf.setIconImage(icon);
         jf.setSize(1080, 720);
         jf.setDefaultCloseOperation(2);
