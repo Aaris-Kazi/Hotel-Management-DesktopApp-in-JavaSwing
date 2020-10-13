@@ -54,9 +54,9 @@ public class Queries{
             }
             conn.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("You are not Connected with the server");
-            System.out.print(e);
+            //System.out.print(e);
         }
         //JPanel jp = new JPanel();
         JScrollPane scroll = new JScrollPane(jt);
@@ -119,9 +119,9 @@ public class Queries{
             }
             conn.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("You are not Connected with the server");
-            System.out.print(e);
+            //System.out.print(e);
         }
         //JPanel jp = new JPanel();
         JScrollPane scroll = new JScrollPane(jt);
@@ -185,11 +185,10 @@ public class Queries{
             }
             conn.close();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
+            //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("You are not Connected with the server");
-            System.out.print(e);
+            //System.out.print(e);
         }
-        //JPanel jp = new JPanel();
         JScrollPane scroll = new JScrollPane(jt);
         
         jp.add(scroll);
@@ -197,8 +196,74 @@ public class Queries{
         jp.revalidate();
         jp.setBounds(240, 240, 500, 1280);
         return jp;
-        //setLayout(null);
-        //jf.setDefaultCloseOperation(2);
+    }
+
+    public JPanel customer() {
+        JPanel jp = new JPanel();
+        jp.setBackground(new Color(56, 55, 52));
+        String column[]={"Customer ID","Name","Check In","Check Out","Room No","Price"};   
+        DefaultTableModel model = new DefaultTableModel();
+        model.setColumnIdentifiers(column);
+        JTable jt = new JTable();
+        JTableHeader th = jt.getTableHeader();
+        th.setBackground(new Color(88, 125, 184).darker());
+        th.setForeground(Color.WHITE);
+        jt.setModel(model);
+        jt.setForeground(Color.WHITE);
+        jt.setBackground(new Color(88, 125, 184).darker());
+        jt.setFont(new Font("TimesRoman", Font.PLAIN, 14));
+        jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
+        jt.setBounds(10, 10, 700, 1080);
+        jt.setFillsViewportHeight(true);
         
+        String data = "";
+        String adata = "";
+        String adataa = "";
+        String datata = "";
+        String adatata = "";
+        String adataata = "";
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
+            Statement smt = conn.createStatement();
+            ResultSet res = smt.executeQuery("select * from hotel_system");
+            int i = 0;
+            while(res.next()){
+                //System.out.println(res.getString(1)+","+res.getString(2)+","+res.getString(3));
+                data = res.getString(1);
+                adata = res.getString(2);
+                adataa = res.getString(3);
+                datata = res.getString(4);
+                adatata = res.getString(5);
+                adataata = res.getString(6);
+                model.addRow(new Object[]{data, adata, adataa, datata, adatata, adataata});
+                i++;
+            }
+            if (i < 1) {
+                System.out.println(i + " Records Not Found");
+            }
+            if (i == 1) {
+
+                System.out.println(i + " Record Found");
+
+            } else {
+
+                //System.out.println(i + " Records Found");
+
+            }
+            conn.close();
+        } catch (Exception e) {
+            //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
+            System.out.println("You are not Connected with the server");
+            //System.out.print(e);
+        }
+        
+        JScrollPane scroll = new JScrollPane(jt);
+        
+        jp.add(scroll);
+        jp.repaint();
+        jp.revalidate();
+        jp.setBounds(240, 240, 700, 1280);
+        return jp;
     }
 }
