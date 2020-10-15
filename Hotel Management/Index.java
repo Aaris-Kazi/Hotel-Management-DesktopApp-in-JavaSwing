@@ -18,6 +18,9 @@ public class Index {
         JPanel jpanel6 = qr.showresrec();
         JPanel jpanel7 = qr.showbills();
         JPanel jpanel8 = qr.showrecbills();
+        JPanel jpanel9 = qr.addCustomer();
+        JPanel jpanel10 = qr.addReservation();
+        JPanel jpanel11 = qr.addBill();
 
         JFrame jf = new JFrame("Hotel Management");
         java.awt.Image icon = Toolkit.getDefaultToolkit().getImage("hotel.png");
@@ -301,6 +304,9 @@ public class Index {
                 jf.remove(jpanel6);
                 jf.remove(jpanel7);
                 jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
                 jf.add(jpanel);
                 jf.revalidate();
                 jf.repaint();
@@ -318,6 +324,9 @@ public class Index {
                 jf.remove(jpanel6);
                 jf.remove(jpanel7);
                 jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
                 jf.add(jpanel1);
                 jf.revalidate();
                 jf.repaint();
@@ -335,6 +344,9 @@ public class Index {
                 jf.remove(jpanel6);
                 jf.remove(jpanel7);
                 jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
                 jf.add(jpanel2);
                 jf.revalidate();
                 jf.repaint();
@@ -352,6 +364,9 @@ public class Index {
                 jf.remove(jpanel6);
                 jf.remove(jpanel7);
                 jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
                 jf.add(jpanel3);
                 jf.revalidate();
                 jf.repaint();
@@ -369,6 +384,9 @@ public class Index {
                 jf.remove(jpanel6);
                 jf.remove(jpanel7);
                 jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
                 jf.add(jpanel4);
                 jf.revalidate();
                 jf.repaint();
@@ -386,6 +404,9 @@ public class Index {
                 jf.remove(jpanel6);
                 jf.remove(jpanel7);
                 jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
                 jf.add(jpanel5);
                 jf.revalidate();
                 jf.repaint();
@@ -403,6 +424,9 @@ public class Index {
                 jf.remove(jpanel5);
                 jf.remove(jpanel7);
                 jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
                 jf.add(jpanel6);
                 jf.revalidate();
                 jf.repaint();
@@ -420,6 +444,9 @@ public class Index {
                 jf.remove(jpanel5);
                 jf.remove(jpanel6);
                 jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
                 jf.add(jpanel7);
                 jf.revalidate();
                 jf.repaint();
@@ -437,7 +464,70 @@ public class Index {
                 jf.remove(jpanel5);
                 jf.remove(jpanel6);
                 jf.remove(jpanel7);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
                 jf.add(jpanel8);
+                jf.revalidate();
+                jf.repaint();
+            } 
+        });
+
+        add.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                jf.remove(jpanel);
+                jf.remove(jpanel1);
+                jf.remove(jpanel2);
+                jf.remove(jpanel3);
+                jf.remove(jpanel4);
+                jf.remove(jpanel5);
+                jf.remove(jpanel6);
+                jf.remove(jpanel7);
+                jf.remove(jpanel8);
+                jf.remove(jpanel10);
+                jf.remove(jpanel11);
+                jf.add(jpanel9);
+                jf.revalidate();
+                jf.repaint();
+            } 
+        });
+
+        add1.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                jf.remove(jpanel);
+                jf.remove(jpanel1);
+                jf.remove(jpanel2);
+                jf.remove(jpanel3);
+                jf.remove(jpanel4);
+                jf.remove(jpanel5);
+                jf.remove(jpanel6);
+                jf.remove(jpanel7);
+                jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel11);
+                jf.add(jpanel10);
+                jf.revalidate();
+                jf.repaint();
+            } 
+        });
+
+        add2.addActionListener(new ActionListener(){
+            @Override
+            public void actionPerformed(java.awt.event.ActionEvent e) {
+                jf.remove(jpanel);
+                jf.remove(jpanel1);
+                jf.remove(jpanel2);
+                jf.remove(jpanel3);
+                jf.remove(jpanel4);
+                jf.remove(jpanel5);
+                jf.remove(jpanel6);
+                jf.remove(jpanel7);
+                jf.remove(jpanel8);
+                jf.remove(jpanel9);
+                jf.remove(jpanel10);
+                jf.add(jpanel11);
                 jf.revalidate();
                 jf.repaint();
             } 
