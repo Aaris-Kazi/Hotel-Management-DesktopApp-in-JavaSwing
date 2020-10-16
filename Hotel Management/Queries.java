@@ -683,7 +683,7 @@ public class Queries{
                 String room = text4.getText();
                 String amount = "";
                 String status = "";
-                if(name == null || check_in == null || check_out == null || room == null){
+                if(name.isBlank() || check_in.isBlank() || check_out.isBlank() || room.isBlank()){
                     System.out.println("Please fill all the data");
                     JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -697,25 +697,26 @@ public class Queries{
                             amount = res.getString(2);
                             status = res.getString(3);
                         }
-                        if(status == "not available" || status == "reserved"){
-                            System.out.println("Cannot place reservation the room is already taken!");
-                            JOptionPane.showMessageDialog(null, "Rooms are already taken", "Error", JOptionPane.ERROR_MESSAGE);
+                        if(status.equals("not available") || status.equals("reserved")){
+                            System.out.println(status);
+                            JOptionPane.showMessageDialog(null, "The Room are already taken", "Error", JOptionPane.ERROR_MESSAGE);
                         }
                         else{
                             smt.executeUpdate("insert into hotel_system (name, check_in, check_out, room_no, price) values ('"+name+"', '"+check_in+"', '"+check_out+"', "+room+", "+amount+")");
                             smt.executeUpdate("update room_status set status = 'not available' where room_no = "+room+"");
                             JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
                             conn.close();
+                            text1.setText("");
+                            text2.setText("");
+                            text3.setText("");
+                            text4.setText("");
                         }
                     } catch (Exception error) {
                         //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
                         System.out.println("You are not Connected with the server"+error);
                     }
     
-                    text1.setText("");
-                    text2.setText("");
-                    text3.setText("");
-                    text4.setText("");
+                    
                 }
                 
             }
@@ -803,7 +804,7 @@ public class Queries{
                 String noDays = text3.getText();
                 String room = text4.getText();
                 String status = "";
-                if(name == null || check_in == null || noDays == null || room == null){
+                if(name.isBlank() || check_in.isBlank() || noDays.isBlank() || room.isBlank()){
                     System.out.println("Please fill all the data");
                     JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -816,7 +817,7 @@ public class Queries{
                         while(res.next()){
                             status = res.getString(3);
                         }
-                        if(status == "not available" || status == "reserved"){
+                        if(status.equals("not available") || status.equals("reserved")){
                             System.out.println("Cannot place reservation the room is already taken!");
                             JOptionPane.showMessageDialog(null, "Rooms are already taken", "Error", JOptionPane.ERROR_MESSAGE);
                         }
@@ -833,11 +834,8 @@ public class Queries{
                     } catch (Exception error) {
                         //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
                         System.out.println("You are not Connected with the server"+error);
-                    }
-    
-                    
+                    }   
                 }
-                
             }
         });
         jp.setBounds(240, 240, 1000, 1280);
@@ -924,7 +922,7 @@ public class Queries{
                 String room = text4.getText();
                 String amount = "";
                 String status = "";
-                if(name == null || payment == null || check_out == null || room == null){
+                if(name.isBlank() || payment.isBlank() || check_out.isBlank() || room.isBlank()){
                     System.out.println("Please fill all the data");
                     JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
                 }
@@ -938,7 +936,7 @@ public class Queries{
                             amount = res.getString(2);
                             status = res.getString(3);
                         }
-                        if(status == "available" || status == "reserved"){
+                        if(status.equals("available") || status.equals("reserved")){
                             JOptionPane.showMessageDialog(null, "The Room is empty", "Error", JOptionPane.ERROR_MESSAGE);
                         }
                         else{
@@ -946,16 +944,15 @@ public class Queries{
                             smt.executeUpdate("update room_status set status = 'available' where room_no = "+room+"");
                             JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
                             conn.close();
+                            text1.setText("");
+                            text2.setText("");
+                            text3.setText("");
+                            text4.setText("");
                         }
                     } catch (Exception error) {
                         //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
                         System.out.println("You are not Connected with the server"+error);
                     }
-    
-                    text1.setText("");
-                    text2.setText("");
-                    text3.setText("");
-                    text4.setText("");
                 }
                 
             }
