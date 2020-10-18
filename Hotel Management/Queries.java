@@ -6,6 +6,8 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.border.Border;
 import java.awt.event.*;
+import java.util.Calendar;
+import java.text.SimpleDateFormat;
 
 public class Queries{
     public JPanel showroom() {
@@ -13,7 +15,9 @@ public class Queries{
         jp.setBackground(new Color(56, 55, 52));
         String column[]={"Room No","Price","Status"};   
         DefaultTableModel model = new DefaultTableModel();
+        model.setRowCount(0);
         model.setColumnIdentifiers(column);
+        
         JTable jt = new JTable();
         JTableHeader th = jt.getTableHeader();
         th.setBackground(new Color(88, 125, 184).darker());
@@ -50,17 +54,15 @@ public class Queries{
                 System.out.println(i + " Record Found");
 
             } else {
-
                 //System.out.println(i + " Records Found");
-
             }
             conn.close();
-        } catch (Exception e) {
-            //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
+        } catch (Exception e) {   
             System.out.println("You are not Connected with the server");
-            //System.out.print(e);
         }
-        //JPanel jp = new JPanel();
+        
+        model.fireTableDataChanged();
+        jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
         
         jp.add(scroll);
@@ -271,7 +273,7 @@ public class Queries{
     public JPanel rec_customer() {
         JPanel jp = new JPanel();
         jp.setBackground(new Color(56, 55, 52));
-        String column[]={"Name","Check In","Check Out","Room No","Price"};   
+        String column[]={"Room No", "Name", "Check In", "Check Out", "Price"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
         JTable jt = new JTable();
@@ -296,16 +298,16 @@ public class Queries{
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
             Statement smt = conn.createStatement();
-            ResultSet res = smt.executeQuery("select * from hotel_system order by check_in desc");
+            ResultSet res = smt.executeQuery("select * from cus_room");
             int i = 0;
             while(res.next()){
                 //System.out.println(res.getString(1)+","+res.getString(2)+","+res.getString(3));
                 
-                adata = res.getString(2);
-                adataa = res.getString(3);
-                datata = res.getString(4);
-                adatata = res.getString(5);
-                adataata = res.getString(6);
+                adata = res.getString(1);
+                adataa = res.getString(2);
+                datata = res.getString(3);
+                adatata = res.getString(4);
+                adataata = res.getString(5);
                 model.addRow(new Object[]{adata, adataa, datata, adatata, adataata});
                 i++;
             }
@@ -406,7 +408,7 @@ public class Queries{
     public JPanel showresrec() {
         JPanel jp = new JPanel();
         jp.setBackground(new Color(56, 55, 52));
-        String column[]={"Customer Name","Reservation Date","No Of Days"};   
+        String column[]={"Customer Name","Reservation Date", "Room No","No Of Days"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
         JTable jt = new JTable();
@@ -423,6 +425,7 @@ public class Queries{
         String data = "";
         String adata = "";
         String adataa = "";
+        String datata = "";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -434,7 +437,8 @@ public class Queries{
                 data = res.getString(2);
                 adata = res.getString(3);
                 adataa = res.getString(4);
-                model.addRow(new Object[]{data, adata, adataa});
+                datata = res.getString(5);
+                model.addRow(new Object[]{data, adata, adataa, datata});
                 i++;
             }
             if (i < 1) {
@@ -702,6 +706,7 @@ public class Queries{
                             JOptionPane.showMessageDialog(null, "The Room are already taken", "Error", JOptionPane.ERROR_MESSAGE);
                         }
                         else{
+                            smt.executeUpdate("insert into cus_room (room_no, name, check_in, check_out, amount) values ("+room+", '"+name+"', '"+check_in+"', '"+check_out+"', "+amount+")");
                             smt.executeUpdate("insert into hotel_system (name, check_in, check_out, room_no, price) values ('"+name+"', '"+check_in+"', '"+check_out+"', "+room+", "+amount+")");
                             smt.executeUpdate("update room_status set status = 'not available' where room_no = "+room+"");
                             JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
@@ -804,17 +809,23 @@ public class Queries{
                 String noDays = text3.getText();
                 String room = text4.getText();
                 String status = "";
+                String check_out = "";
+                String amount = "";
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+                Calendar c = Calendar.getInstance();
                 if(name.isBlank() || check_in.isBlank() || noDays.isBlank() || room.isBlank()){
                     System.out.println("Please fill all the data");
                     JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
                 }
                 else{
                     try {
+                        c.setTime(sdf.parse(check_in));
                         Class.forName("com.mysql.cj.jdbc.Driver");
                         Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
                         Statement smt = conn.createStatement();
                         ResultSet res = smt.executeQuery("select * from room_status where room_no = "+room+"");
                         while(res.next()){
+                            amount = res.getString(2);
                             status = res.getString(3);
                         }
                         if(status.equals("not available") || status.equals("reserved")){
@@ -822,6 +833,10 @@ public class Queries{
                             JOptionPane.showMessageDialog(null, "Rooms are already taken", "Error", JOptionPane.ERROR_MESSAGE);
                         }
                         else{
+                            int days = Integer.parseInt(noDays);
+                            c.add(Calendar.DAY_OF_MONTH, days);
+                            check_out = sdf.format(c.getTime());
+                            smt.executeUpdate("insert into cus_room (room_no, name, check_in, check_out, amount) values ("+room+", '"+name+"', '"+check_in+"', '"+check_out+"', "+amount+")");
                             smt.executeUpdate("insert into customer (cus_name, reservation_date, room_no, no_days) values ('"+name+"', '"+check_in+"', "+room+", "+noDays+")");
                             smt.executeUpdate("update room_status set status = 'reserved' where room_no = "+room+"");
                             JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
@@ -936,10 +951,11 @@ public class Queries{
                             amount = res.getString(2);
                             status = res.getString(3);
                         }
-                        if(status.equals("available") || status.equals("reserved")){
+                        if(status.equals("available")){
                             JOptionPane.showMessageDialog(null, "The Room is empty", "Error", JOptionPane.ERROR_MESSAGE);
                         }
                         else{
+                            smt.executeUpdate("delete from cus_room where room_no  = "+room+"");
                             smt.executeUpdate("insert into bill (date, customer_name, room_no, amount, payment) values ('"+check_out+"', '"+name+"', "+room+", "+amount+", '"+payment+"')");
                             smt.executeUpdate("update room_status set status = 'available' where room_no = "+room+"");
                             JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
