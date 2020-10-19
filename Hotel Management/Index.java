@@ -9,15 +9,42 @@ import java.awt.event.*;
 public class Index {
     public void Front() {
         Queries qr = new Queries();
-        JPanel jpanel = qr.showroom();
-        JPanel jpanel1 = qr.avairoom();
-        JPanel jpanel2 = qr.resroom();
-        JPanel jpanel3 = qr.customer();
-        JPanel jpanel4 = qr.rec_customer();
-        JPanel jpanel5 = qr.showres();
-        JPanel jpanel6 = qr.showresrec();
-        JPanel jpanel7 = qr.showbills();
-        JPanel jpanel8 = qr.showrecbills();
+        JPanel jpanel = new JPanel();
+        jpanel.setBounds(240,  240, 500, 1280 );
+        jpanel.setBackground(new Color(56, 55, 52));
+        jpanel.setLayout(null);
+        JPanel jpanel1 = new JPanel();//qr.avairoom();
+        jpanel1.setBounds(240,  240, 500, 1280 );
+        jpanel1.setBackground(new Color(56, 55, 52));
+        jpanel1.setLayout(null); 
+        JPanel jpanel2 = new JPanel();//qr.resroom(); 
+        jpanel2.setBounds(240,  240, 500, 1280 );
+        jpanel2.setBackground(new Color(56, 55, 52));
+        jpanel2.setLayout(null);
+        JPanel jpanel3 = new JPanel();//qr.customer();
+        jpanel3.setBounds(240,  240, 500, 1280 );
+        jpanel3.setBackground(new Color(56, 55, 52));
+        jpanel3.setLayout(null);
+        JPanel jpanel4 = new JPanel();//qr.rec_customer();
+        jpanel4.setBounds(240,  240, 500, 1280 );
+        jpanel4.setBackground(new Color(56, 55, 52));
+        jpanel4.setLayout(null);
+        JPanel jpanel5 = new JPanel();//qr.showres();
+        jpanel5.setBounds(240,  240, 500, 1280 );
+        jpanel5.setBackground(new Color(56, 55, 52));
+        jpanel5.setLayout(null);
+        JPanel jpanel6 = new JPanel();//qr.showresrec();
+        jpanel6.setBounds(240,  240, 500, 1280 );
+        jpanel6.setBackground(new Color(56, 55, 52));
+        jpanel6.setLayout(null);
+        JPanel jpanel7 = new JPanel();//qr.showbills();
+        jpanel7.setBounds(240,  240, 500, 1280 );
+        jpanel7.setBackground(new Color(56, 55, 52));
+        jpanel7.setLayout(null);
+        JPanel jpanel8 = new JPanel();//qr.showrecbills();
+        jpanel8.setBounds(240,  240, 500, 1280 );
+        jpanel8.setBackground(new Color(56, 55, 52));
+        jpanel8.setLayout(null);
         JPanel jpanel9 = qr.addCustomer();
         JPanel jpanel10 = qr.addReservation();
         JPanel jpanel11 = qr.addBill();
@@ -32,7 +59,7 @@ public class Index {
         JPanel panel1 = new JPanel();
         panel1.setBackground(Color.BLACK.darker());
         panel1.setBorder(border);
-        JPanel panel2 = new JPanel();
+        JPanel panel2 = new JPanel() ;
         panel2.setBackground(Color.BLACK.darker());
         JPanel panel3 = new JPanel();
         panel3.setBackground(Color.BLACK.darker());
@@ -295,7 +322,10 @@ public class Index {
         showroom.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
-                
+                JScrollPane scroll = qr.showroom();
+                jpanel.add(scroll);
+                jpanel.repaint();
+                jpanel.revalidate();
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
                 jf.remove(jpanel3);
@@ -316,6 +346,10 @@ public class Index {
         avrooms.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                JScrollPane scroll = qr.avairoom();
+                jpanel1.add(scroll);
+                jpanel1.repaint();
+                jpanel1.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel2);
                 jf.remove(jpanel3);
@@ -336,6 +370,10 @@ public class Index {
         reserved.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                JScrollPane scroll = qr.resroom();
+                jpanel2.add(scroll);
+                jpanel2.repaint();
+                jpanel2.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel3);
@@ -356,6 +394,10 @@ public class Index {
         history.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                JScrollPane scroll = qr.customer();
+                jpanel3.add(scroll);
+                jpanel3.repaint();
+                jpanel3.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
@@ -376,6 +418,10 @@ public class Index {
         recent.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                JScrollPane scroll = qr.rec_customer();
+                jpanel4.add(scroll);
+                jpanel4.repaint();
+                jpanel4.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
@@ -396,6 +442,10 @@ public class Index {
         history1.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                JScrollPane scroll = qr.showres();
+                jpanel5.add(scroll);
+                jpanel5.repaint();
+                jpanel5.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
@@ -416,6 +466,10 @@ public class Index {
         recent1.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                JScrollPane scroll = qr.showresrec();
+                jpanel6.add(scroll);
+                jpanel6.repaint();
+                jpanel6.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
@@ -436,6 +490,10 @@ public class Index {
         history2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                JScrollPane scroll = qr.showbills();
+                jpanel7.add(scroll);
+                jpanel7.repaint();
+                jpanel7.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
@@ -456,6 +514,10 @@ public class Index {
         recent2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                JScrollPane scroll = qr.showrecbills();
+                jpanel8.add(scroll);
+                jpanel8.repaint();
+                jpanel8.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
@@ -472,10 +534,37 @@ public class Index {
                 jf.repaint();
             } 
         });
-
+//////////////////////////////////////////////////////////////////////////////////////
         add.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                jpanel.removeAll();
+                jpanel.repaint();
+                jpanel.revalidate();
+                jpanel1.removeAll();
+                jpanel1.repaint();
+                jpanel1.revalidate();
+                jpanel2.removeAll();
+                jpanel2.repaint();
+                jpanel2.revalidate();
+                jpanel3.removeAll();
+                jpanel3.repaint();
+                jpanel3.revalidate();
+                jpanel4.removeAll();
+                jpanel4.repaint();
+                jpanel4.revalidate();
+                jpanel5.removeAll();
+                jpanel5.repaint();
+                jpanel5.revalidate();
+                jpanel6.removeAll();
+                jpanel6.repaint();
+                jpanel6.revalidate();
+                jpanel7.removeAll();
+                jpanel7.repaint();
+                jpanel7.revalidate();
+                jpanel8.removeAll();
+                jpanel8.repaint();
+                jpanel8.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
@@ -496,6 +585,33 @@ public class Index {
         add1.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                jpanel.removeAll();
+                jpanel.repaint();
+                jpanel.revalidate();
+                jpanel1.removeAll();
+                jpanel1.repaint();
+                jpanel1.revalidate();
+                jpanel2.removeAll();
+                jpanel2.repaint();
+                jpanel2.revalidate();
+                jpanel3.removeAll();
+                jpanel3.repaint();
+                jpanel3.revalidate();
+                jpanel4.removeAll();
+                jpanel4.repaint();
+                jpanel4.revalidate();
+                jpanel5.removeAll();
+                jpanel5.repaint();
+                jpanel5.revalidate();
+                jpanel6.removeAll();
+                jpanel6.repaint();
+                jpanel6.revalidate();
+                jpanel7.removeAll();
+                jpanel7.repaint();
+                jpanel7.revalidate();
+                jpanel8.removeAll();
+                jpanel8.repaint();
+                jpanel8.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
@@ -516,6 +632,33 @@ public class Index {
         add2.addActionListener(new ActionListener(){
             @Override
             public void actionPerformed(java.awt.event.ActionEvent e) {
+                jpanel.removeAll();
+                jpanel.repaint();
+                jpanel.revalidate();
+                jpanel1.removeAll();
+                jpanel1.repaint();
+                jpanel1.revalidate();
+                jpanel2.removeAll();
+                jpanel2.repaint();
+                jpanel2.revalidate();
+                jpanel3.removeAll();
+                jpanel3.repaint();
+                jpanel3.revalidate();
+                jpanel4.removeAll();
+                jpanel4.repaint();
+                jpanel4.revalidate();
+                jpanel5.removeAll();
+                jpanel5.repaint();
+                jpanel5.revalidate();
+                jpanel6.removeAll();
+                jpanel6.repaint();
+                jpanel6.revalidate();
+                jpanel7.removeAll();
+                jpanel7.repaint();
+                jpanel7.revalidate();
+                jpanel8.removeAll();
+                jpanel8.repaint();
+                jpanel8.revalidate();
                 jf.remove(jpanel);
                 jf.remove(jpanel1);
                 jf.remove(jpanel2);
@@ -537,6 +680,6 @@ public class Index {
         jf.setSize(1080, 720);
         jf.setDefaultCloseOperation(2);
         jf.setLayout(null);
-        jf.setVisible(true);
+        jf.setVisible(true); 
     }    
 }

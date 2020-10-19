@@ -6,13 +6,11 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.border.Border;
 import java.awt.event.*;
-import java.util.Calendar;
+import java.util. Calendar;
 import java.text.SimpleDateFormat;
 
 public class Queries{
-    public JPanel showroom() {
-        JPanel jp = new JPanel();
-        jp.setBackground(new Color(56, 55, 52));
+    public JScrollPane showroom() {
         String column[]={"Room No","Price","Status"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setRowCount(0);
@@ -64,22 +62,15 @@ public class Queries{
         model.fireTableDataChanged();
         jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
-        
-        jp.add(scroll);
-        jp.setBounds(240, 240, 500, 1280);
-        jp.repaint();
-        jp.revalidate();
-        return jp;
-        //setLayout(null);
-        //jf.setDefaultCloseOperation(2);
+        scroll.setBounds(0, 0, 500, 600);
+        return scroll;
         
     }
 
-    public JPanel avairoom() {
-        JPanel jp = new JPanel();
-        jp.setBackground(new Color(56, 55, 52));
+    public JScrollPane avairoom() {
         String column[]={"Room No","Price","Status"};   
         DefaultTableModel model = new DefaultTableModel();
+        model.setRowCount(0);
         model.setColumnIdentifiers(column);
         JTable jt = new JTable();
         JTableHeader th = jt.getTableHeader();
@@ -125,28 +116,19 @@ public class Queries{
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
             System.out.println("You are not Connected with the server");
-            //System.out.print(e);
         }
-        //JPanel jp = new JPanel();
+        model.fireTableDataChanged();
+        jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
-        
-        jp.add(scroll);
-        jp.repaint();
-        jp.revalidate();
-        jp.setBounds(240, 240, 500, 1280);
-        
-        return jp;
-        //setLayout(null);
-        //jf.setDefaultCloseOperation(2);
-        
+        scroll.setBounds(0, 0, 500, 600);
+        return scroll;
     }
 
-    public JPanel resroom() {
-        JPanel jp = new JPanel();
-        jp.setBackground(new Color(56, 55, 52));
+    public JScrollPane resroom() {
         String column[]={"Room No","Price","Status"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
+        model.setRowCount(0);
         JTable jt = new JTable();
         JTableHeader th = jt.getTableHeader();
         th.setBackground(new Color(88, 125, 184).darker());
@@ -193,21 +175,18 @@ public class Queries{
             System.out.println("You are not Connected with the server");
             //System.out.print(e);
         }
+        model.fireTableDataChanged();
+        jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
-        
-        jp.add(scroll);
-        jp.repaint();
-        jp.revalidate();
-        jp.setBounds(240, 240, 500, 1280);
-        return jp;
+        scroll.setBounds(0, 0, 500, 600);
+        return scroll;
     }
 
-    public JPanel customer() {
-        JPanel jp = new JPanel();
-        jp.setBackground(new Color(56, 55, 52));
+    public JScrollPane customer() {
         String column[]={"Name","Check In","Check Out","Room No","Price"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
+        model.setRowCount(0);
         JTable jt = new JTable();
         JTableHeader th = jt.getTableHeader();
         th.setBackground(new Color(88, 125, 184).darker());
@@ -250,7 +229,6 @@ public class Queries{
                 System.out.println(i + " Record Found");
 
             } else {
-
                 //System.out.println(i + " Records Found");
 
             }
@@ -260,22 +238,18 @@ public class Queries{
             System.out.println("You are not Connected with the server");
             //System.out.print(e);
         }
-        
+        model.fireTableDataChanged();
+        jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
-        
-        jp.add(scroll);
-        jp.repaint();
-        jp.revalidate();
-        jp.setBounds(240, 240, 700, 1280);
-        return jp;
+        scroll.setBounds(0, 0, 500, 600);
+        return scroll;
     }
 
-    public JPanel rec_customer() {
-        JPanel jp = new JPanel();
-        jp.setBackground(new Color(56, 55, 52));
+    public JScrollPane rec_customer() {
         String column[]={"Room No", "Name", "Check In", "Check Out", "Price"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
+        model.setRowCount(0);
         JTable jt = new JTable();
         JTableHeader th = jt.getTableHeader();
         th.setBackground(new Color(88, 125, 184).darker());
@@ -287,7 +261,6 @@ public class Queries{
         jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jt.setBounds(10, 10, 700, 1080);
         jt.setFillsViewportHeight(true);
-        
         
         String adata = "";
         String adataa = "";
@@ -329,23 +302,18 @@ public class Queries{
             System.out.println("You are not Connected with the server");
             //System.out.print(e);
         }
-        
+        model.fireTableDataChanged();
+        jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
-        
-        
-        jp.add(scroll);
-        jp.repaint();
-        jp.revalidate();
-        jp.setBounds(240, 240, 700, 1280);
-        return jp;
+        scroll.setBounds(0, 0, 500, 600);
+        return scroll;
     }
 
-   public JPanel showres() {
-        JPanel jp = new JPanel();
-        jp.setBackground(new Color(56, 55, 52));
+   public JScrollPane showres() {
         String column[]={"Customer Name","Reservation Date","No Of Days"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
+        model.setRowCount(0);
         JTable jt = new JTable();
         JTableHeader th = jt.getTableHeader();
         th.setBackground(new Color(88, 125, 184).darker());
@@ -392,25 +360,19 @@ public class Queries{
             System.out.println("You are not Connected with the server");
             //System.out.print(e);
         }
-        //JPanel jp = new JPanel();
+        model.fireTableDataChanged();
+        jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
-        
-        jp.add(scroll);
-        jp.setBounds(240, 240, 500, 1280);
-        jp.repaint();
-        jp.revalidate();
-        return jp;
-        //setLayout(null);
-        //jf.setDefaultCloseOperation(2);
+        scroll.setBounds(0, 0, 500, 600);
+        return scroll;
         
     } 
 
-    public JPanel showresrec() {
-        JPanel jp = new JPanel();
-        jp.setBackground(new Color(56, 55, 52));
+    public JScrollPane showresrec() {
         String column[]={"Customer Name","Reservation Date", "Room No","No Of Days"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
+        model.setRowCount(0);
         JTable jt = new JTable();
         JTableHeader th = jt.getTableHeader();
         th.setBackground(new Color(88, 125, 184).darker());
@@ -459,25 +421,18 @@ public class Queries{
             System.out.println("You are not Connected with the server");
             //System.out.print(e);
         }
-        //JPanel jp = new JPanel();
+        model.fireTableDataChanged();
+        jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
-        
-        jp.add(scroll);
-        jp.setBounds(240, 240, 500, 1280);
-        jp.repaint();
-        jp.revalidate();
-        return jp;
-        //setLayout(null);
-        //jf.setDefaultCloseOperation(2);
-        
+        scroll.setBounds(0, 0, 500, 600);
+        return scroll;
     }
 
-    public JPanel showbills() {
-        JPanel jp = new JPanel();
-        jp.setBackground(new Color(56, 55, 52));
+    public JScrollPane showbills() {
         String column[]={"Date","Customer Name","Room No","Amount","Payment"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
+        model.setRowCount(0);
         JTable jt = new JTable();
         JTableHeader th = jt.getTableHeader();
         th.setBackground(new Color(88, 125, 184).darker());
@@ -528,24 +483,18 @@ public class Queries{
             System.out.println("You are not Connected with the server");
             //System.out.print(e);
         }
-        //JPanel jp = new JPanel();
+        model.fireTableDataChanged();
+        jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
-        
-        jp.add(scroll);
-        jp.setBounds(240, 240, 500, 1280);
-        jp.repaint();
-        jp.revalidate();
-        return jp;
-        //setLayout(null);
-        //jf.setDefaultCloseOperation(2);   
+        scroll.setBounds(0, 0, 500, 600);
+        return scroll;   
     }
 
-    public JPanel showrecbills() {
-        JPanel jp = new JPanel();
-        jp.setBackground(new Color(56, 55, 52));
+    public JScrollPane showrecbills() {
         String column[]={"Date","Customer Name","Room No","Amount","Payment"};   
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
+        model.setRowCount(0);
         JTable jt = new JTable();
         JTableHeader th = jt.getTableHeader();
         th.setBackground(new Color(88, 125, 184).darker());
@@ -596,18 +545,14 @@ public class Queries{
             System.out.println("You are not Connected with the server");
             //System.out.print(e);
         }
-        //JPanel jp = new JPanel();
+        model.fireTableDataChanged();
+        jt.repaint();
         JScrollPane scroll = new JScrollPane(jt);
-        
-        jp.add(scroll);
-        jp.setBounds(240, 240, 500, 1280);
-        jp.repaint();
-        jp.revalidate();
-        return jp;
-        //setLayout(null);
-        //jf.setDefaultCloseOperation(2);   
+        scroll.setBounds(0, 0, 500, 600);
+        return scroll;   
     }
 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     public JPanel addCustomer() {
         Border border = BorderFactory.createLineBorder(new Color(88, 125, 184, 10).darker());
         JPanel jp = new JPanel();
