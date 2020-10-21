@@ -4,7 +4,7 @@ import java.awt.*;
 
 class SplashScreen extends JWindow{
     private static final long serialVersionUID = 1L;
-    java.awt.Image img = Toolkit.getDefaultToolkit().getImage("Walkway.png");
+    java.awt.Image img = Toolkit.getDefaultToolkit().getImage("Walkway.PNG");
     
     public SplashScreen(){
         try{
