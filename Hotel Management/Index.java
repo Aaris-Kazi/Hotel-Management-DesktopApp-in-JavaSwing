@@ -1,10 +1,10 @@
 import javax.swing.*;
 import javax.swing.border.Border;
-
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Toolkit;
-import java.awt.event.*;
+
+import static javax.swing.WindowConstants.*;
 
 public class Index {
     public void Front() {
@@ -267,418 +267,370 @@ public class Index {
         panel4.add(recent2);
         panel4.add(add2);
 
-        btn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                jf.remove(panel2);
-                jf.remove(panel3);
-                jf.remove(panel4);
-                jf.add(panel1);
-                jf.revalidate();
-                jf.repaint();
+        btn.addActionListener(e -> {
+            jf.remove(panel2);
+            jf.remove(panel3);
+            jf.remove(panel4);
+            jf.add(panel1);
+            jf.revalidate();
+            jf.repaint();
 
-            }
         });
 
-        btn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                jf.remove(panel1);
-                jf.remove(panel3);
-                jf.remove(panel4);
-                jf.add(panel2);
-                jf.revalidate();
-                jf.repaint();
+        btn1.addActionListener(e -> {
+            jf.remove(panel1);
+            jf.remove(panel3);
+            jf.remove(panel4);
+            jf.add(panel2);
+            jf.revalidate();
+            jf.repaint();
 
-            }
         });
 
-        btn2.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                jf.remove(panel1);
-                jf.remove(panel2);
-                jf.remove(panel4);
-                jf.add(panel3);
-                jf.revalidate();
-                jf.repaint();
+        btn2.addActionListener(e -> {
+            jf.remove(panel1);
+            jf.remove(panel2);
+            jf.remove(panel4);
+            jf.add(panel3);
+            jf.revalidate();
+            jf.repaint();
 
-            }
         });
 
-        btn3.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                jf.remove(panel1);
-                jf.remove(panel2);
-                jf.remove(panel3);
-                jf.add(panel4);
-                jf.revalidate();
-                jf.repaint();
+        btn3.addActionListener(e -> {
+            jf.remove(panel1);
+            jf.remove(panel2);
+            jf.remove(panel3);
+            jf.add(panel4);
+            jf.revalidate();
+            jf.repaint();
 
-            }
         });
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        showroom.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                JScrollPane scroll = qr.showroom();
-                jpanel.add(scroll);
-                jpanel.repaint();
-                jpanel.revalidate();
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        showroom.addActionListener(e -> {
+            JScrollPane scroll = qr.showroom();
+            jpanel.add(scroll);
+            jpanel.repaint();
+            jpanel.revalidate();
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        avrooms.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                JScrollPane scroll = qr.avairoom();
-                jpanel1.add(scroll);
-                jpanel1.repaint();
-                jpanel1.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel1);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        avrooms.addActionListener(e -> {
+            JScrollPane scroll = qr.avairoom();
+            jpanel1.add(scroll);
+            jpanel1.repaint();
+            jpanel1.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel1);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        reserved.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                JScrollPane scroll = qr.resroom();
-                jpanel2.add(scroll);
-                jpanel2.repaint();
-                jpanel2.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel2);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        reserved.addActionListener(e -> {
+            JScrollPane scroll = qr.resroom();
+            jpanel2.add(scroll);
+            jpanel2.repaint();
+            jpanel2.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel2);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        history.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                JScrollPane scroll = qr.customer();
-                jpanel3.add(scroll);
-                jpanel3.repaint();
-                jpanel3.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel3);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        history.addActionListener(e -> {
+            JScrollPane scroll = qr.customer();
+            jpanel3.add(scroll);
+            jpanel3.repaint();
+            jpanel3.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel3);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        recent.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                JScrollPane scroll = qr.rec_customer();
-                jpanel4.add(scroll);
-                jpanel4.repaint();
-                jpanel4.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel4);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        recent.addActionListener(e -> {
+            JScrollPane scroll = qr.rec_customer();
+            jpanel4.add(scroll);
+            jpanel4.repaint();
+            jpanel4.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel4);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        history1.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                JScrollPane scroll = qr.showres();
-                jpanel5.add(scroll);
-                jpanel5.repaint();
-                jpanel5.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel5);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        history1.addActionListener(e -> {
+            JScrollPane scroll = qr.showres();
+            jpanel5.add(scroll);
+            jpanel5.repaint();
+            jpanel5.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel5);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        recent1.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                JScrollPane scroll = qr.showresrec();
-                jpanel6.add(scroll);
-                jpanel6.repaint();
-                jpanel6.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel6);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        recent1.addActionListener(e -> {
+            JScrollPane scroll = qr.showresrec();
+            jpanel6.add(scroll);
+            jpanel6.repaint();
+            jpanel6.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel6);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        history2.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                JScrollPane scroll = qr.showbills();
-                jpanel7.add(scroll);
-                jpanel7.repaint();
-                jpanel7.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel7);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        history2.addActionListener(e -> {
+            JScrollPane scroll = qr.showbills();
+            jpanel7.add(scroll);
+            jpanel7.repaint();
+            jpanel7.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel7);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        recent2.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                JScrollPane scroll = qr.showrecbills();
-                jpanel8.add(scroll);
-                jpanel8.repaint();
-                jpanel8.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel8);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        recent2.addActionListener(e -> {
+            JScrollPane scroll = qr.showrecbills();
+            jpanel8.add(scroll);
+            jpanel8.repaint();
+            jpanel8.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel8);
+            jf.revalidate();
+            jf.repaint();
         });
 //////////////////////////////////////////////////////////////////////////////////////
-        add.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                jpanel.removeAll();
-                jpanel.repaint();
-                jpanel.revalidate();
-                jpanel1.removeAll();
-                jpanel1.repaint();
-                jpanel1.revalidate();
-                jpanel2.removeAll();
-                jpanel2.repaint();
-                jpanel2.revalidate();
-                jpanel3.removeAll();
-                jpanel3.repaint();
-                jpanel3.revalidate();
-                jpanel4.removeAll();
-                jpanel4.repaint();
-                jpanel4.revalidate();
-                jpanel5.removeAll();
-                jpanel5.repaint();
-                jpanel5.revalidate();
-                jpanel6.removeAll();
-                jpanel6.repaint();
-                jpanel6.revalidate();
-                jpanel7.removeAll();
-                jpanel7.repaint();
-                jpanel7.revalidate();
-                jpanel8.removeAll();
-                jpanel8.repaint();
-                jpanel8.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel10);
-                jf.remove(jpanel11);
-                jf.add(jpanel9);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        add.addActionListener(e -> {
+            jpanel.removeAll();
+            jpanel.repaint();
+            jpanel.revalidate();
+            jpanel1.removeAll();
+            jpanel1.repaint();
+            jpanel1.revalidate();
+            jpanel2.removeAll();
+            jpanel2.repaint();
+            jpanel2.revalidate();
+            jpanel3.removeAll();
+            jpanel3.repaint();
+            jpanel3.revalidate();
+            jpanel4.removeAll();
+            jpanel4.repaint();
+            jpanel4.revalidate();
+            jpanel5.removeAll();
+            jpanel5.repaint();
+            jpanel5.revalidate();
+            jpanel6.removeAll();
+            jpanel6.repaint();
+            jpanel6.revalidate();
+            jpanel7.removeAll();
+            jpanel7.repaint();
+            jpanel7.revalidate();
+            jpanel8.removeAll();
+            jpanel8.repaint();
+            jpanel8.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel10);
+            jf.remove(jpanel11);
+            jf.add(jpanel9);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        add1.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                jpanel.removeAll();
-                jpanel.repaint();
-                jpanel.revalidate();
-                jpanel1.removeAll();
-                jpanel1.repaint();
-                jpanel1.revalidate();
-                jpanel2.removeAll();
-                jpanel2.repaint();
-                jpanel2.revalidate();
-                jpanel3.removeAll();
-                jpanel3.repaint();
-                jpanel3.revalidate();
-                jpanel4.removeAll();
-                jpanel4.repaint();
-                jpanel4.revalidate();
-                jpanel5.removeAll();
-                jpanel5.repaint();
-                jpanel5.revalidate();
-                jpanel6.removeAll();
-                jpanel6.repaint();
-                jpanel6.revalidate();
-                jpanel7.removeAll();
-                jpanel7.repaint();
-                jpanel7.revalidate();
-                jpanel8.removeAll();
-                jpanel8.repaint();
-                jpanel8.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel11);
-                jf.add(jpanel10);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        add1.addActionListener(e -> {
+            jpanel.removeAll();
+            jpanel.repaint();
+            jpanel.revalidate();
+            jpanel1.removeAll();
+            jpanel1.repaint();
+            jpanel1.revalidate();
+            jpanel2.removeAll();
+            jpanel2.repaint();
+            jpanel2.revalidate();
+            jpanel3.removeAll();
+            jpanel3.repaint();
+            jpanel3.revalidate();
+            jpanel4.removeAll();
+            jpanel4.repaint();
+            jpanel4.revalidate();
+            jpanel5.removeAll();
+            jpanel5.repaint();
+            jpanel5.revalidate();
+            jpanel6.removeAll();
+            jpanel6.repaint();
+            jpanel6.revalidate();
+            jpanel7.removeAll();
+            jpanel7.repaint();
+            jpanel7.revalidate();
+            jpanel8.removeAll();
+            jpanel8.repaint();
+            jpanel8.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel11);
+            jf.add(jpanel10);
+            jf.revalidate();
+            jf.repaint();
         });
 
-        add2.addActionListener(new ActionListener(){
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                jpanel.removeAll();
-                jpanel.repaint();
-                jpanel.revalidate();
-                jpanel1.removeAll();
-                jpanel1.repaint();
-                jpanel1.revalidate();
-                jpanel2.removeAll();
-                jpanel2.repaint();
-                jpanel2.revalidate();
-                jpanel3.removeAll();
-                jpanel3.repaint();
-                jpanel3.revalidate();
-                jpanel4.removeAll();
-                jpanel4.repaint();
-                jpanel4.revalidate();
-                jpanel5.removeAll();
-                jpanel5.repaint();
-                jpanel5.revalidate();
-                jpanel6.removeAll();
-                jpanel6.repaint();
-                jpanel6.revalidate();
-                jpanel7.removeAll();
-                jpanel7.repaint();
-                jpanel7.revalidate();
-                jpanel8.removeAll();
-                jpanel8.repaint();
-                jpanel8.revalidate();
-                jf.remove(jpanel);
-                jf.remove(jpanel1);
-                jf.remove(jpanel2);
-                jf.remove(jpanel3);
-                jf.remove(jpanel4);
-                jf.remove(jpanel5);
-                jf.remove(jpanel6);
-                jf.remove(jpanel7);
-                jf.remove(jpanel8);
-                jf.remove(jpanel9);
-                jf.remove(jpanel10);
-                jf.add(jpanel11);
-                jf.revalidate();
-                jf.repaint();
-            } 
+        add2.addActionListener(e -> {
+            jpanel.removeAll();
+            jpanel.repaint();
+            jpanel.revalidate();
+            jpanel1.removeAll();
+            jpanel1.repaint();
+            jpanel1.revalidate();
+            jpanel2.removeAll();
+            jpanel2.repaint();
+            jpanel2.revalidate();
+            jpanel3.removeAll();
+            jpanel3.repaint();
+            jpanel3.revalidate();
+            jpanel4.removeAll();
+            jpanel4.repaint();
+            jpanel4.revalidate();
+            jpanel5.removeAll();
+            jpanel5.repaint();
+            jpanel5.revalidate();
+            jpanel6.removeAll();
+            jpanel6.repaint();
+            jpanel6.revalidate();
+            jpanel7.removeAll();
+            jpanel7.repaint();
+            jpanel7.revalidate();
+            jpanel8.removeAll();
+            jpanel8.repaint();
+            jpanel8.revalidate();
+            jf.remove(jpanel);
+            jf.remove(jpanel1);
+            jf.remove(jpanel2);
+            jf.remove(jpanel3);
+            jf.remove(jpanel4);
+            jf.remove(jpanel5);
+            jf.remove(jpanel6);
+            jf.remove(jpanel7);
+            jf.remove(jpanel8);
+            jf.remove(jpanel9);
+            jf.remove(jpanel10);
+            jf.add(jpanel11);
+            jf.revalidate();
+            jf.repaint();
         });
 
         jf.setIconImage(icon);
         jf.setSize(1080, 720);
-        jf.setDefaultCloseOperation(2);
+        jf.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         jf.setLayout(null);
         jf.setVisible(true); 
     }    

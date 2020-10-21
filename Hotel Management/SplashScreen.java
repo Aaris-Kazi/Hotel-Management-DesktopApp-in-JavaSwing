@@ -3,7 +3,6 @@ import java.awt.*;
 
 
 class SplashScreen extends JWindow{
-    
     private static final long serialVersionUID = 1L;
     java.awt.Image img = Toolkit.getDefaultToolkit().getImage("Walkway.png");
     
@@ -12,11 +11,12 @@ class SplashScreen extends JWindow{
             setSize(633, 360);
             setLocationRelativeTo(null);
             setVisible(true);
+            //show();
             Thread.sleep(5000);
             dispose();
         }
         catch(Exception e){
-            javax.swing.JOptionPane.showMessageDialog((java.awt.Component) null,"Error"+e.getMessage(), "Error:", javax.swing.JOptionPane.ERROR_MESSAGE); 
+            javax.swing.JOptionPane.showMessageDialog(null,"Error"+e.getMessage(), "Error:", JOptionPane.ERROR_MESSAGE);
             System.out.println("! Something Went Wrong in Execution !");
         }
     }

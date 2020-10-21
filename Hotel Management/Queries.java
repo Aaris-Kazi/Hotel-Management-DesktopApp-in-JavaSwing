@@ -5,13 +5,14 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.border.Border;
-import java.awt.event.*;
 import java.util. Calendar;
 import java.text.SimpleDateFormat;
 
+import static java.lang.System.*;
+
 public class Queries{
     public JScrollPane showroom() {
-        String column[]={"Room No","Price","Status"};   
+        String[] column ={"Room No","Price","Status"};
         DefaultTableModel model = new DefaultTableModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(column);
@@ -27,9 +28,9 @@ public class Queries{
         jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jt.setFillsViewportHeight(true);
         
-        String data = "";
-        String adata = "";
-        String adataa = "";
+        String data;
+        String adata;
+        String adataa;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -45,18 +46,18 @@ public class Queries{
                 i++;
             }
             if (i < 1) {
-                System.out.println(i + " Records Not Found");
+                out.println(i + " Records Not Found");
             }
             if (i == 1) {
 
-                System.out.println(i + " Record Found");
+                out.println(i + " Record Found");
 
             } else {
-                //System.out.println(i + " Records Found");
+                out.println(i + " Records Found");
             }
             conn.close();
         } catch (Exception e) {   
-            System.out.println("You are not Connected with the server");
+            out.println("You are not Connected with the server"+e);
         }
         
         model.fireTableDataChanged();
@@ -68,7 +69,7 @@ public class Queries{
     }
 
     public JScrollPane avairoom() {
-        String column[]={"Room No","Price","Status"};   
+        String[] column ={"Room No","Price","Status"};
         DefaultTableModel model = new DefaultTableModel();
         model.setRowCount(0);
         model.setColumnIdentifiers(column);
@@ -83,9 +84,9 @@ public class Queries{
         jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jt.setFillsViewportHeight(true);
         
-        String data = "";
-        String adata = "";
-        String adataa = "";
+        String data;
+        String adata;
+        String adataa;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -101,21 +102,21 @@ public class Queries{
                 i++;
             }
             if (i < 1) {
-                System.out.println(i + " Records Not Found");
+                out.println(i + " Records Not Found");
             }
             if (i == 1) {
 
-                System.out.println(i + " Record Found");
+                out.println(i + " Record Found");
 
             } else {
 
-                //System.out.println(i + " Records Found");
+                out.println(i + " Records Found");
 
             }
             conn.close();
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-            System.out.println("You are not Connected with the server");
+            out.println("You are not Connected with the server");
         }
         model.fireTableDataChanged();
         jt.repaint();
@@ -125,7 +126,7 @@ public class Queries{
     }
 
     public JScrollPane resroom() {
-        String column[]={"Room No","Price","Status"};   
+        String[] column ={"Room No","Price","Status"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
         model.setRowCount(0);
@@ -140,9 +141,9 @@ public class Queries{
         jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jt.setFillsViewportHeight(true);
         
-        String data = "";
-        String adata = "";
-        String adataa = "";
+        String data;
+        String adata;
+        String adataa;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -158,21 +159,21 @@ public class Queries{
                 i++;
             }
             if (i < 1) {
-                System.out.println(i + " Records Not Found");
+                out.println(i + " Records Not Found");
             }
             if (i == 1) {
 
-                System.out.println(i + " Record Found");
+                out.println(i + " Record Found");
 
             } else {
 
-                //System.out.println(i + " Records Found");
+                out.println(i + " Records Found");
 
             }
             conn.close();
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-            System.out.println("You are not Connected with the server");
+            out.println("You are not Connected with the server");
             //System.out.print(e);
         }
         model.fireTableDataChanged();
@@ -183,7 +184,7 @@ public class Queries{
     }
 
     public JScrollPane customer() {
-        String column[]={"Name","Check In","Check Out","Room No","Price"};   
+        String[] column ={"Name","Check In","Check Out","Room No","Price"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
         model.setRowCount(0);
@@ -199,11 +200,11 @@ public class Queries{
         jt.setBounds(10, 10, 700, 1080);
         jt.setFillsViewportHeight(true);
         
-        String adata = "";
-        String adataa = "";
-        String datata = "";
-        String adatata = "";
-        String adataata = "";
+        String adata;
+        String adataa;
+        String datata;
+        String adatata;
+        String adataata;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -222,20 +223,20 @@ public class Queries{
                 i++;
             }
             if (i < 1) {
-                System.out.println(i + " Records Not Found");
+                out.println(i + " Records Not Found");
             }
             if (i == 1) {
 
-                System.out.println(i + " Record Found");
+                out.println(i + " Record Found");
 
             } else {
-                //System.out.println(i + " Records Found");
+                out.println(i + " Records Found");
 
             }
             conn.close();
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-            System.out.println("You are not Connected with the server");
+            out.println("You are not Connected with the server"+e);
             //System.out.print(e);
         }
         model.fireTableDataChanged();
@@ -246,7 +247,7 @@ public class Queries{
     }
 
     public JScrollPane rec_customer() {
-        String column[]={"Room No", "Name", "Check In", "Check Out", "Price"};   
+        String[] column ={"Room No", "Name", "Check In", "Check Out", "Price"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
         model.setRowCount(0);
@@ -262,11 +263,11 @@ public class Queries{
         jt.setBounds(10, 10, 700, 1080);
         jt.setFillsViewportHeight(true);
         
-        String adata = "";
-        String adataa = "";
-        String datata = "";
-        String adatata = "";
-        String adataata = "";
+        String adata;
+        String adataa;
+        String datata;
+        String adatata;
+        String adataata;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -285,21 +286,19 @@ public class Queries{
                 i++;
             }
             if (i < 1) {
-                System.out.println(i + " Records Not Found");
+                out.println(i + " Records Not Found");
             }
             if (i == 1) {
-
-                System.out.println(i + " Record Found");
+                out.println(i + " Record Found");
 
             } else {
-
-                //System.out.println(i + " Records Found");
+                out.println(i + " Records Found");
 
             }
             conn.close();
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-            System.out.println("You are not Connected with the server");
+            out.println("You are not Connected with the server");
             //System.out.print(e);
         }
         model.fireTableDataChanged();
@@ -310,7 +309,7 @@ public class Queries{
     }
 
    public JScrollPane showres() {
-        String column[]={"Customer Name","Reservation Date","No Of Days"};   
+        String[] column ={"Customer Name","Reservation Date","No Of Days"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
         model.setRowCount(0);
@@ -325,9 +324,9 @@ public class Queries{
         jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jt.setFillsViewportHeight(true);
         
-        String data = "";
-        String adata = "";
-        String adataa = "";
+        String data;
+        String adata;
+        String adataa;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -343,21 +342,21 @@ public class Queries{
                 i++;
             }
             if (i < 1) {
-                System.out.println(i + " Records Not Found");
+                out.println(i + " Records Not Found");
             }
             if (i == 1) {
 
-                System.out.println(i + " Record Found");
+                out.println(i + " Record Found");
 
             } else {
 
-                //System.out.println(i + " Records Found");
+                out.println(i + " Records Found");
 
             }
             conn.close();
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-            System.out.println("You are not Connected with the server");
+            out.println("You are not Connected with the server");
             //System.out.print(e);
         }
         model.fireTableDataChanged();
@@ -369,7 +368,7 @@ public class Queries{
     } 
 
     public JScrollPane showresrec() {
-        String column[]={"Customer Name","Reservation Date", "Room No","No Of Days"};   
+        String[] column ={"Customer Name","Reservation Date", "Room No","No Of Days"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
         model.setRowCount(0);
@@ -384,10 +383,10 @@ public class Queries{
         jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jt.setFillsViewportHeight(true);
         
-        String data = "";
-        String adata = "";
-        String adataa = "";
-        String datata = "";
+        String data;
+        String adata;
+        String adataa;
+        String datata;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -404,21 +403,21 @@ public class Queries{
                 i++;
             }
             if (i < 1) {
-                System.out.println(i + " Records Not Found");
+                out.println(i + " Records Not Found");
             }
             if (i == 1) {
 
-                System.out.println(i + " Record Found");
+                out.println(i + " Record Found");
 
             } else {
 
-                //System.out.println(i + " Records Found");
+                out.println(i + " Records Found");
 
             }
             conn.close();
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-            System.out.println("You are not Connected with the server");
+            out.println("You are not Connected with the server");
             //System.out.print(e);
         }
         model.fireTableDataChanged();
@@ -429,7 +428,7 @@ public class Queries{
     }
 
     public JScrollPane showbills() {
-        String column[]={"Date","Customer Name","Room No","Amount","Payment"};   
+        String[] column ={"Date","Customer Name","Room No","Amount","Payment"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
         model.setRowCount(0);
@@ -444,11 +443,11 @@ public class Queries{
         jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jt.setFillsViewportHeight(true);
         
-        String data = "";
-        String adata = "";
-        String adataa = "";
-        String datata = "";
-        String adatata = "";
+        String data;
+        String adata;
+        String adataa;
+        String datata;
+        String adatata;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -466,21 +465,21 @@ public class Queries{
                 i++;
             }
             if (i < 1) {
-                System.out.println(i + " Records Not Found");
+                out.println(i + " Records Not Found");
             }
             if (i == 1) {
 
-                System.out.println(i + " Record Found");
+                out.println(i + " Record Found");
 
             } else {
 
-                //System.out.println(i + " Records Found");
+                out.println(i + " Records Found");
 
             }
             conn.close();
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-            System.out.println("You are not Connected with the server");
+            out.println("You are not Connected with the server");
             //System.out.print(e);
         }
         model.fireTableDataChanged();
@@ -491,7 +490,7 @@ public class Queries{
     }
 
     public JScrollPane showrecbills() {
-        String column[]={"Date","Customer Name","Room No","Amount","Payment"};   
+        String[] column ={"Date","Customer Name","Room No","Amount","Payment"};
         DefaultTableModel model = new DefaultTableModel();
         model.setColumnIdentifiers(column);
         model.setRowCount(0);
@@ -506,11 +505,11 @@ public class Queries{
         jt.setAutoResizeMode(JTable.AUTO_RESIZE_ALL_COLUMNS);
         jt.setFillsViewportHeight(true);
         
-        String data = "";
-        String adata = "";
-        String adataa = "";
-        String datata = "";
-        String adatata = "";
+        String data;
+        String adata;
+        String adataa;
+        String datata;
+        String adatata;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
@@ -528,21 +527,21 @@ public class Queries{
                 i++;
             }
             if (i < 1) {
-                System.out.println(i + " Records Not Found");
+                out.println(i + " Records Not Found");
             }
             if (i == 1) {
 
-                System.out.println(i + " Record Found");
+                out.println(i + " Record Found");
 
             } else {
 
-                //System.out.println(i + " Records Found");
+                out.println(i + " Records Found");
 
             }
             conn.close();
         } catch (Exception e) {
             //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-            System.out.println("You are not Connected with the server");
+            out.println("You are not Connected with the server");
             //System.out.print(e);
         }
         model.fireTableDataChanged();
@@ -623,53 +622,50 @@ public class Queries{
         jp.add(text4);
 
         jp.add(btn1);
-        btn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                String name = text1.getText();
-                String check_in = text2.getText();
-                String check_out = text3.getText();
-                String room = text4.getText();
-                String amount = "";
-                String status = "";
-                if(name.isBlank() || check_in.isBlank() || check_out.isBlank() || room.isBlank()){
-                    System.out.println("Please fill all the data");
-                    JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    try {
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
-                        Statement smt = conn.createStatement();
-                        ResultSet res = smt.executeQuery("select * from room_status where room_no = "+room+"");
-                        while(res.next()){
-                            amount = res.getString(2);
-                            status = res.getString(3);
-                        }
-                        if(status.equals("not available") || status.equals("reserved")){
-                            System.out.println(status);
-                            JOptionPane.showMessageDialog(null, "The Room are already taken", "Error", JOptionPane.ERROR_MESSAGE);
-                        }
-                        else{
-                            smt.executeUpdate("insert into cus_room (room_no, name, check_in, check_out, amount) values ("+room+", '"+name+"', '"+check_in+"', '"+check_out+"', "+amount+")");
-                            smt.executeUpdate("insert into hotel_system (name, check_in, check_out, room_no, price) values ('"+name+"', '"+check_in+"', '"+check_out+"', "+room+", "+amount+")");
-                            smt.executeUpdate("update room_status set status = 'not available' where room_no = "+room+"");
-                            JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
-                            conn.close();
-                            text1.setText("");
-                            text2.setText("");
-                            text3.setText("");
-                            text4.setText("");
-                        }
-                    } catch (Exception error) {
-                        //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-                        System.out.println("You are not Connected with the server"+error);
-                    }
-    
-                    
-                }
-                
+        btn1.addActionListener(e -> {
+            String name = text1.getText();
+            String check_in = text2.getText();
+            String check_out = text3.getText();
+            String room = text4.getText();
+            String amount = "";
+            String status = "";
+            if(name.isBlank() || check_in.isBlank() || check_out.isBlank() || room.isBlank()){
+                out.println("Please fill all the data");
+                JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
             }
+            else{
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
+                    Statement smt = conn.createStatement();
+                    ResultSet res = smt.executeQuery("select * from room_status where room_no = "+room+"");
+                    while(res.next()){
+                        amount = res.getString(2);
+                        status = res.getString(3);
+                    }
+                    if(status.equals("not available") || status.equals("reserved")){
+                        out.println(status);
+                        JOptionPane.showMessageDialog(null, "The Room are already taken", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    else{
+                        smt.executeUpdate("insert into cus_room (room_no, name, check_in, check_out, amount) values ("+room+", '"+name+"', '"+check_in+"', '"+check_out+"', "+amount+")");
+                        smt.executeUpdate("insert into hotel_system (name, check_in, check_out, room_no, price) values ('"+name+"', '"+check_in+"', '"+check_out+"', "+room+", "+amount+")");
+                        smt.executeUpdate("update room_status set status = 'not available' where room_no = "+room+"");
+                        JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
+                        conn.close();
+                        text1.setText("");
+                        text2.setText("");
+                        text3.setText("");
+                        text4.setText("");
+                    }
+                } catch (Exception error) {
+                    //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
+                    out.println("You are not Connected with the server"+error);
+                }
+
+
+            }
+
         });
         jp.setBounds(240, 240, 1000, 1280);
         jp.setLayout(null);
@@ -746,55 +742,52 @@ public class Queries{
         jp.add(text4);
 
         jp.add(btn1);
-        btn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                String name = text1.getText();
-                String check_in = text2.getText();
-                String noDays = text3.getText();
-                String room = text4.getText();
-                String status = "";
-                String check_out = "";
-                String amount = "";
-                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-                Calendar c = Calendar.getInstance();
-                if(name.isBlank() || check_in.isBlank() || noDays.isBlank() || room.isBlank()){
-                    System.out.println("Please fill all the data");
-                    JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    try {
-                        c.setTime(sdf.parse(check_in));
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
-                        Statement smt = conn.createStatement();
-                        ResultSet res = smt.executeQuery("select * from room_status where room_no = "+room+"");
-                        while(res.next()){
-                            amount = res.getString(2);
-                            status = res.getString(3);
-                        }
-                        if(status.equals("not available") || status.equals("reserved")){
-                            System.out.println("Cannot place reservation the room is already taken!");
-                            JOptionPane.showMessageDialog(null, "Rooms are already taken", "Error", JOptionPane.ERROR_MESSAGE);
-                        }
-                        else{
-                            int days = Integer.parseInt(noDays);
-                            c.add(Calendar.DAY_OF_MONTH, days);
-                            check_out = sdf.format(c.getTime());
-                            smt.executeUpdate("insert into cus_room (room_no, name, check_in, check_out, amount) values ("+room+", '"+name+"', '"+check_in+"', '"+check_out+"', "+amount+")");
-                            smt.executeUpdate("insert into customer (cus_name, reservation_date, room_no, no_days) values ('"+name+"', '"+check_in+"', "+room+", "+noDays+")");
-                            smt.executeUpdate("update room_status set status = 'reserved' where room_no = "+room+"");
-                            JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
-                            text1.setText("");
-                            text2.setText("");
-                            text3.setText("");
-                            text4.setText("");
-                            conn.close();
-                        }
-                    } catch (Exception error) {
-                        //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-                        System.out.println("You are not Connected with the server"+error);
-                    }   
+        btn1.addActionListener(e -> {
+            String name = text1.getText();
+            String check_in = text2.getText();
+            String noDays = text3.getText();
+            String room = text4.getText();
+            String status = "";
+            String check_out;
+            String amount = "";
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+            Calendar c = Calendar.getInstance();
+            if(name.isBlank() || check_in.isBlank() || noDays.isBlank() || room.isBlank()){
+                out.println("Please fill all the data");
+                JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+            else{
+                try {
+                    c.setTime(sdf.parse(check_in));
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
+                    Statement smt = conn.createStatement();
+                    ResultSet res = smt.executeQuery("select * from room_status where room_no = "+room+"");
+                    while(res.next()){
+                        amount = res.getString(2);
+                        status = res.getString(3);
+                    }
+                    if(status.equals("not available") || status.equals("reserved")){
+                        out.println("Cannot place reservation the room is already taken!");
+                        JOptionPane.showMessageDialog(null, "Rooms are already taken", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    else{
+                        int days = Integer.parseInt(noDays);
+                        c.add(Calendar.DAY_OF_MONTH, days);
+                        check_out = sdf.format(c.getTime());
+                        smt.executeUpdate("insert into cus_room (room_no, name, check_in, check_out, amount) values ("+room+", '"+name+"', '"+check_in+"', '"+check_out+"', "+amount+")");
+                        smt.executeUpdate("insert into customer (cus_name, reservation_date, room_no, no_days) values ('"+name+"', '"+check_in+"', "+room+", "+noDays+")");
+                        smt.executeUpdate("update room_status set status = 'reserved' where room_no = "+room+"");
+                        JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
+                        text1.setText("");
+                        text2.setText("");
+                        text3.setText("");
+                        text4.setText("");
+                        conn.close();
+                    }
+                } catch (Exception error) {
+                    //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
+                    out.println("You are not Connected with the server"+error);
                 }
             }
         });
@@ -873,50 +866,47 @@ public class Queries{
         jp.add(text4);
 
         jp.add(btn1);
-        btn1.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(java.awt.event.ActionEvent e) {
-                String name = text1.getText();
-                String payment = text2.getText();
-                String check_out = text3.getText();
-                String room = text4.getText();
-                String amount = "";
-                String status = "";
-                if(name.isBlank() || payment.isBlank() || check_out.isBlank() || room.isBlank()){
-                    System.out.println("Please fill all the data");
-                    JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
-                }
-                else{
-                    try {
-                        Class.forName("com.mysql.cj.jdbc.Driver");
-                        Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
-                        Statement smt = conn.createStatement();
-                        ResultSet res = smt.executeQuery("select * from room_status where room_no = "+room+"");
-                        while(res.next()){
-                            amount = res.getString(2);
-                            status = res.getString(3);
-                        }
-                        if(status.equals("available")){
-                            JOptionPane.showMessageDialog(null, "The Room is empty", "Error", JOptionPane.ERROR_MESSAGE);
-                        }
-                        else{
-                            smt.executeUpdate("delete from cus_room where room_no  = "+room+"");
-                            smt.executeUpdate("insert into bill (date, customer_name, room_no, amount, payment) values ('"+check_out+"', '"+name+"', "+room+", "+amount+", '"+payment+"')");
-                            smt.executeUpdate("update room_status set status = 'available' where room_no = "+room+"");
-                            JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
-                            conn.close();
-                            text1.setText("");
-                            text2.setText("");
-                            text3.setText("");
-                            text4.setText("");
-                        }
-                    } catch (Exception error) {
-                        //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
-                        System.out.println("You are not Connected with the server"+error);
-                    }
-                }
-                
+        btn1.addActionListener(e -> {
+            String name = text1.getText();
+            String payment = text2.getText();
+            String check_out = text3.getText();
+            String room = text4.getText();
+            String amount = "";
+            String status = "";
+            if(name.isBlank() || payment.isBlank() || check_out.isBlank() || room.isBlank()){
+                out.println("Please fill all the data");
+                JOptionPane.showMessageDialog(null, "Records are left empty", "Error", JOptionPane.ERROR_MESSAGE);
             }
+            else{
+                try {
+                    Class.forName("com.mysql.cj.jdbc.Driver");
+                    Connection conn = DriverManager.getConnection("jdbc:mysql://localhost/hotel_management", "root", "");
+                    Statement smt = conn.createStatement();
+                    ResultSet res = smt.executeQuery("select * from room_status where room_no = "+room+"");
+                    while(res.next()){
+                        amount = res.getString(2);
+                        status = res.getString(3);
+                    }
+                    if(status.equals("available")){
+                        JOptionPane.showMessageDialog(null, "The Room is empty", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    else{
+                        smt.executeUpdate("delete from cus_room where room_no  = "+room+"");
+                        smt.executeUpdate("insert into bill (date, customer_name, room_no, amount, payment) values ('"+check_out+"', '"+name+"', "+room+", "+amount+", '"+payment+"')");
+                        smt.executeUpdate("update room_status set status = 'available' where room_no = "+room+"");
+                        JOptionPane.showMessageDialog(null, "Record Fill Successfully", "Success", JOptionPane.WARNING_MESSAGE);
+                        conn.close();
+                        text1.setText("");
+                        text2.setText("");
+                        text3.setText("");
+                        text4.setText("");
+                    }
+                } catch (Exception error) {
+                    //JOptionPane.showMessageDialog(null, "No Record Found", "Error", JOptionPane.ERROR_MESSAGE);
+                    out.println("You are not Connected with the server"+error);
+                }
+            }
+
         });
         jp.setBounds(240, 240, 1000, 1280);
         jp.setLayout(null);
